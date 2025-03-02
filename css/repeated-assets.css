@@ -1,0 +1,123 @@
+/* Header */
+
+header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+header > h1 {
+    font-size: 1.5rem;
+}
+
+nav > ul {
+    display: flex;
+    gap: 51px;
+    font-size: 1rem;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="3"><path d="M0,2 C20,4 40,0 60,2 80,4 100,0" stroke="black" fill="transparent" stroke-width="2"/></svg>');
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    opacity: 1;
+}
+
+#current-page a::after {
+    opacity: 1;
+}
+
+/* Scroll Arrows */
+
+.arrow {
+    width: 64px;
+    height: 64px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.down {
+    position: absolute;
+    left: 50%;
+    top: 93%;
+    transform: translate(-50%, -50%);
+}
+
+.up {
+    background-color: #F0F0F0;
+    position: absolute;
+    left: 50%;
+    top: 107%;
+    transform: translate(-50%, -50%);
+}
+
+.arrow svg {
+    width: 55px;
+    height: 55px;
+}
+
+.arrow:hover {
+    border: 1px solid black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px) translate(-50%, -50%);
+}
+
+/* Footer */
+
+footer {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+#links {
+    display: flex;
+    gap: 51px;
+}
+
+footer svg {
+    width: 45px;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    nav > ul {
+        gap: 25px;
+    }
+    
+    #links {
+        gap: 10px;
+    }
+
+    footer svg {
+        width: 35px;
+    }
+
+    #contact-info {
+        font-size: 0.75rem;
+    }
+}
